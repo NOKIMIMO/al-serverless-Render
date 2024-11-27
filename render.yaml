@@ -27,3 +27,4 @@ version: "1"
 databases:
   - name: node-db
     plan: free
+    region: frankfurt
