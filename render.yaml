@@ -5,11 +5,12 @@ services:
   repo: https://github.com/NOKIMIMO/al-serverless-Render
   plan: free
   envVars:
-  - fromGroup: serverless
+  - key: DATABASE_URL
+    value: ${databases.node-db.connectionString}
   region: frankfurt
   buildCommand: npm install
   startCommand: npm start
-  
+
 - type: web
   name: al-serverless-static
   runtime: static
@@ -22,5 +23,5 @@ services:
 version: "1"
 
 databases:
-  - name: node-db # A PostgreSQL database named django-app-db running on a free instance
+  - name: node-db
     plan: free
