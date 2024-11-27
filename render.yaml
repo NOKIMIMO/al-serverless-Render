@@ -10,7 +10,6 @@ services:
   buildCommand: npm install
   startCommand: npm start
   
-services:
 - type: web
   name: al-serverless-static
   runtime: static
