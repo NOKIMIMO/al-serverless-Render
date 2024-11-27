@@ -6,7 +6,9 @@ services:
   plan: free
   envVars:
   - key: DATABASE_URL
-    value: ${databases.node-db.connectionString}
+    fromDatabase:
+      name: node-db
+      property: connectionString
   region: frankfurt
   buildCommand: npm install
   startCommand: npm start
